@@ -1,0 +1,14 @@
+{
+  "name": "bee747-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "bee747.com: static site plus the /api/apiary live-panel endpoint, one Cloudflare Worker",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "login": "wrangler login"
+  },
+  "devDependencies": {
+    "wrangler": "^4.157.0"
+  }
+}

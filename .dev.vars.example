@@ -1,0 +1,3 @@
+# Copy to .dev.vars for local `npx wrangler dev`. Never commit .dev.vars.
+# Must match the token in /home/ronhall918/.bee747_token on the Pi.
+PUBLISH_TOKEN=change-me

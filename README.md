@@ -65,11 +65,13 @@ terminal from this folder:
 
 ### Deploy on push (GitHub)
 
-Once it works by hand: Cloudflare dashboard → Workers & Pages → the `bee747`
-Worker → Settings → Build → connect the GitHub repo. Build command empty, deploy
-command `npx wrangler deploy`. Every push to `main` redeploys; pull requests get
-preview URLs. The KV id and secret are already on the Worker, so the repo holds
-no secrets.
+Connected 2026-11-03: GitHub `ronhall918-oss/bee747-site` → Cloudflare Workers
+Builds on the `bee747` Worker (dashboard → Workers & Pages → bee747 → Settings →
+Build). Build command empty, deploy command `npx wrangler deploy`, production
+branch `main`. Every push to `main` redeploys; pull requests get preview URLs.
+The KV id and secret are already on the Worker, so the repo holds no secrets.
+Deploying by hand (`npx wrangler deploy`) still works but lets GitHub and the
+live site drift — push instead.
 
 ### Pi side
 

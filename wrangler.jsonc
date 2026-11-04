@@ -6,18 +6,19 @@
   "main": "src/worker.js",
   "compatibility_date": "2026-10-01",
 
-  // The site. Any path that isn't an asset falls through to the Worker; /api/*
-  // runs the Worker first so an asset can never shadow the API.
+  // The site. Every request runs through the Worker first (so the www -> apex
+  // redirect applies to pages and images too); anything not /api/* is then
+  // served from ./public via env.ASSETS.
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": true
   },
 
   // Live-panel storage. Create once with:  npx wrangler kv namespace create LIVE
   // then paste the id it prints here (the preview_id is for `wrangler dev --remote`).
   "kv_namespaces": [
-    { "binding": "LIVE", "id": "REPLACE_WITH_KV_NAMESPACE_ID" }
+    { "binding": "LIVE", "id": "19c9df0056a64f19bc5f4683798b9614" }
   ],
 
   // The Pi's publish token is a secret, never in this file:
